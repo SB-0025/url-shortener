@@ -32,6 +32,7 @@ export const redirectUrl = async(req, res) => {
     try {
 
         const {shortCode} = req.params
+        console.log(req.params)
         const result = await Url.findOne({shortCode})
 
         if(!result){
