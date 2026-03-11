@@ -15,7 +15,7 @@ import generateShortCode from "../utils/generateShortCode.js";
     res.json({
       message: "Data inserted successfully",
       success: true,
-      shortUrl: `http://localhost:4000/${shortCode}`,
+      shortUrl: `https://url-shortener-blond-delta.vercel.app/${shortCode}`,
     });
 
     
