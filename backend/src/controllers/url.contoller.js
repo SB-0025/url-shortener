@@ -15,7 +15,7 @@ import generateShortCode from "../utils/generateShortCode.js";
     res.json({
       message: "Data inserted successfully",
       success: true,
-      shortUrl: `https://url-shortener-blond-delta.vercel.app/${shortCode}`,
+      shortUrl: `https://url-shortener-1-ip9e.onrender.com/${shortCode}`,
     });
 
     
@@ -32,7 +32,6 @@ export const redirectUrl = async(req, res) => {
     try {
 
         const {shortCode} = req.params
-        console.log(req.params)
         const result = await Url.findOne({shortCode})
 
         if(!result){
