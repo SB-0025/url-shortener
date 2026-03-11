@@ -7,7 +7,7 @@ const UrlForm = () => {
 
   const submitHandler = async (e) => {
     e.preventDefault();
-    const data = await fetch("http://localhost:4000/shorten", {
+    const data = await fetch(`${import.meta.env.VITE_API_URL}/shorten`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ url: formInput }),
