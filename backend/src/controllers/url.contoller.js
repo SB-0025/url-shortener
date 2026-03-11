@@ -7,16 +7,15 @@ import generateShortCode from "../utils/generateShortCode.js";
     const { url } = req.body;
     const shortCode = generateShortCode();
 
-    const data = await Url.create({
+    await Url.create({
         shortCode,
         url
     })
 
     res.json({
-      message: "Data inserted",
+      message: "Data inserted successfully",
       success: true,
-      result: data,
-      shortUrl: `http://localhost:4000/${shortCode}`
+      shortUrl: `http://localhost:4000/${shortCode}`,
     });
 
     
@@ -31,6 +30,7 @@ import generateShortCode from "../utils/generateShortCode.js";
 
 export const redirectUrl = async(req, res) => {
     try {
+
         const {shortCode} = req.params
         const result = await Url.findOne({shortCode})
 
@@ -41,13 +41,7 @@ export const redirectUrl = async(req, res) => {
             })
         }
 
-            
-        // const url = data.originalUrl
-    
-        // res.redirect(data.url)
-        res.json({
-            url: result.url
-        })
+       res.redirect(result.url)
 
     } catch(error){
     res.status(500).json({
