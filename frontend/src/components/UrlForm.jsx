@@ -7,7 +7,7 @@ const UrlForm = () => {
 
   const submitHandler = async (e) => {
     e.preventDefault();
-    const data = await fetch(`${import.meta.env.VITE_API_URL}/shorten`, {
+    const data = await fetch("https://url-shortener-1-ip9e.onrender.com/shorten", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ url: formInput }),
