@@ -161,4 +161,8 @@ app.use(cors({
 - URL expiration / auto-delete
 - QR code generation for short URLs
 
+---
+## 📄 License
+ 
+This project is open source and available under the MIT License
 
